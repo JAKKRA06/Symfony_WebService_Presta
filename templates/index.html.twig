@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ShopController!{% endblock %}
+
+{% block body %}
+
+
+<div class="example-wrapper">
+    <h1>Witaj w moim sklepie internetowym !</h1>
+    <p>Oto lista produktów dostępnych w sklepie.</p>
+    {% for resource in resources %}
+      {{resource.attributes}} </br>
+
+    {% endfor %}
+
+</div>
+{% endblock %}
