@@ -8,10 +8,26 @@
 <div class="example-wrapper">
     <h1>Witaj w moim sklepie internetowym !</h1>
     <p>Oto lista produktów dostępnych w sklepie.</p>
+  <table border="2">
+
+  {% for quantity in quantities %}
+
+{{ form_start(form) }}
+  {% if resources %}
+  <tr><th>ID</th><th style="width:50px;">Name</th><th>Price</th><th>Quantity</th><th style="width:300px;">Confirm to change quantity of product in stock </th></tr>
     {% for resource in resources %}
-      {{resource.attributes}} </br>
+
+      <td>{{ resource.id }} </td><td> {{ resource.name.language }} </td><td> {{ resource.price }} </td><td>{{ form_widget(form) }}</td> <td> <a href=?id=1><button class="btn btn-primary button" type="submit">Uaktualnij</button></a></td></tr>
+
+Obecnie w magazynie dostępnych jest {{quantity.quantity}} sztuk tego produktu. Jeśli chcesz zmienić ilość wpisz nową wartość w pole w tabeli.
 
     {% endfor %}
+        {% endif %}
+          {{ form_end(form) }}
+        {% endfor %}
+
+ID:
+{{id}}
 
 </div>
 {% endblock %}

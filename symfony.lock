@@ -512,6 +512,9 @@
     "webmozart/assert": {
         "version": "1.6.0"
     },
+    "wic/prestashop-webservice-lib": {
+        "version": "v1.0.7"
+    },
     "zendframework/zend-code": {
         "version": "3.4.1"
     },
